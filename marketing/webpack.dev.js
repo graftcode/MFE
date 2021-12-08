@@ -1,7 +1,19 @@
+const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const commonConfig = require("./webpack.common");
 
-
-module.exports = {
-    
-}
+module.exports = merge(commonConfig, {
+  mode: "development",
+  devSever: {
+    port: 8081,
+    historyAPIFallBback: {
+      index: "index.html",
+    },
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+});
