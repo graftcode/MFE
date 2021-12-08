@@ -5,9 +5,9 @@ const commonConfig = require("./webpack.common");
 
 module.exports = merge(commonConfig, {
   mode: "development",
-  devSever: {
+  devServer: {
     port: 8081,
-    historyAPIFallBback: {
+    historyApiFallback: {
       index: "index.html",
     },
   },
