@@ -12,6 +12,13 @@ module.exports = merge(commonConfig, {
     },
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "marketing", //going to be some global variable
+      filename: "remoteEntry.js",
+      exposes: {
+        "./MarketingApp": "./src/bootstrap",
+      },
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
