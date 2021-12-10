@@ -4,7 +4,6 @@ const commonConfig = require("./webpack.common");
 
 const { dependencies } = require("./package.json");
 
-
 module.exports = merge(commonConfig, {
   mode: "development",
   devServer: {
