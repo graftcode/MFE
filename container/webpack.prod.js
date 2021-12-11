@@ -10,7 +10,7 @@ module.exports = merge(commonConfig, {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: "/container/latest/"
+    publicPath: "/container/latest/",
   },
   plugins: [
     new ModuleFederationPlugin({
