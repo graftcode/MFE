@@ -17,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }}
       - run: npm install
       - run: npm run build
 
