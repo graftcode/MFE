@@ -18,7 +18,7 @@ module.exports = merge(commonConfig, {
       name: "marketing", //going to be some global variable
       filename: "remoteEntry.js",
       exposes: {
-        "./MarketingApp": "./src/bootstrap",
+        "./MarketingApp": "./src/index",
       },
       shared: dependencies,
     }),
