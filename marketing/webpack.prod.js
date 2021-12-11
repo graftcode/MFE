@@ -22,8 +22,5 @@ module.exports = merge(commonConfig, {
       },
       shared: dependencies,
     }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
   ],
 });
