@@ -4,7 +4,7 @@ const commonConfig = require("./webpack.common");
 
 const { dependencies } = require("./package.json");
 
-const domain = process.env.PRODUCTION_DOMAIN;
+const domain = process.env.PROD_DOMAIN;
 
 module.exports = merge(commonConfig, {
   mode: "production",
