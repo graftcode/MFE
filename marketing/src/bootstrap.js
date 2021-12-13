@@ -7,8 +7,8 @@ import App from "./App";
 const mount = (el, { onNavigate }) => {
   const history = createMemoryHistory();
 
+  // history.listen(onNavigate);
   history.listen(onNavigate);
-
   ReactDOM.render(<App history={history} />, el);
 };
 
