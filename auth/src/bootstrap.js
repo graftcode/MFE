@@ -4,8 +4,10 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
 // MOunt function to start the app
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  //whenever createMemoryHistory is created initial path is alwyas just "/" it would not know about the addressbar path
+  const history =
+    defaultHistory || createMemoryHistory({ initialEntries: [initialPath] });
   if (onNavigate) history.listen(onNavigate);
 
   ReactDOM.render(<App history={history} />, el);
@@ -13,7 +15,7 @@ const mount = (el, { onNavigate, defaultHistory }) => {
   return {
     onParentNavigate: ({ pathname: nextPathname }) => {
       const { pathname } = history.location;
-
+      console.log("nextPathName; ", nextPathname);
       if (pathname !== nextPathname) history.push(nextPathname);
     },
   };
