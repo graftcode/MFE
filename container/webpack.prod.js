@@ -18,6 +18,7 @@ module.exports = merge(commonConfig, {
       remotes: {
         //marketing in string matches up with name defined in wp in marketing...The key marketing whenever that is imported we are going to look at the url and look inside there for it
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
+        auth: `auth@${domain}/auth/latest/remoteEntry.js`,
       },
       shared: dependencies,
     }),
