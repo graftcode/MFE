@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { mount } from "auth/AuthApp";
-import { useHistory, usseHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default () => {
   const ref = useRef(null);
@@ -14,6 +14,9 @@ export default () => {
         if (pathname !== nextPathname) history.push(nextPathname);
       },
       initialPath: history.location.pathname,
+      onSignIn: () => {
+        console.log("User signed in!");
+      },
     });
 
     history.listen(onParentNavigate); //will make an arg available inside onParentNavigate called location
