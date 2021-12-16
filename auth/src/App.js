@@ -12,6 +12,7 @@ const generateClassName = createGenerateClassName({
   productionPrefix: "ma",
 });
 
+
 const App = ({ history, onSignIn }) => {
   return (
     <div>
