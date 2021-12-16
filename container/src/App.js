@@ -6,6 +6,7 @@ import {
 } from "@material-ui/core/styles";
 
 import Header from "./components/Header";
+import Progress from "./components/Progress";
 
 const MarketingApp = lazy(() => import("./components/MarketingApp"));
 const AuthApp = lazy(() => import("./components/AuthApp"));
@@ -19,7 +20,7 @@ const App = () => {
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
         <Header />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Progress />}>
           <Switch>
             <Route path="/auth" component={AuthApp} />
             <Route path="/" component={MarketingApp} />
