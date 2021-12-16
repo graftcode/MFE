@@ -21,7 +21,10 @@ const App = () => {
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
-        <Header isSignedIn={isSignedIn} />
+        <Header
+          isSignedIn={isSignedIn}
+          onSignOut={() => setIsSignedIn(false)}
+        />
         <Suspense fallback={<Progress />}>
           <Switch>
             <Route
